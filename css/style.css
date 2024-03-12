@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'pixel';
-    src: url('../font/pixel.ttf');
+    src: url('../font/Minecraft.ttf');
 }
 
 * {
@@ -32,17 +32,18 @@
 /* colors */
 :root {
     --color-default: #11101d;
-    --color-primary: #375a80;
+    --color-primary: #Dd0285;
     --color-secondary: aliceblue;
     --color-tertiary: black;
     --color-base: #1a3552;
-    --color-detail: rgb(8, 6, 5);
-    --color-table: #563579;
-    --color-text-box: rgba(255, 255, 255.8);
+    --color-detail: #77c502;
+    --color-detail2: #0285dd;
+    --color-table: #9b015d;
+    --color-text-box: rgba(255, 255, 255, .8);
     --color-text-box-focus: rgba(255, 255, 255, 1);
     --color-bg-footer: #03020b;
     --color-card: rgba(0, 0, 0, .5);
-    --color-btn: #161b41;
+    --color-btn: #02dddd;
     --color-btn-hover: transparent;
 }
 
@@ -163,25 +164,26 @@ a {
 
 .navBar li a:hover:not(.sub a:hover) {
     background-color: var(--color-btn-hover);
-    border: 1.8px solid var(--color-primary);
+    border: 1.8px solid var(--color-detail);
 }
 
-.navBar button {
-    padding: .5rem 1.2rem;
-    cursor: pointer;
-    margin-left: .5rem;
-    background-color: var(--color-btn);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-right: .3rem;
+.btnLogin{
     border: 1.8px solid var(--color-btn);
+    background: var(--color-btn);
+    padding: .3em .85em;
+    margin: 2em auto;
     transition: .5s;
-    border-radius: .2rem;
+    border-radius: 2px;
+    font-weight: 600;
+    color: var(--color-tertiary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.navBar button:hover {
+.btnLogin:hover {
+    border: 1.8px solid var(--color-detail);
     background-color: var(--color-btn-hover);
-    border: 1.8px solid var(--color-primary);
+    color: var(--color-secondary);
 }
 
 ul.sub {
@@ -201,7 +203,7 @@ ul.sub li {
 
 ul.sub li:hover {
     background-color: var(--color-btn-hover);
-    border: 1.8px solid var(--color-primary);
+    border: 1.8px solid var(--color-detail);
 }
 
 /* #endregion */
@@ -240,21 +242,24 @@ video {
 }
 
 .btnDefault {
-    border: 2.2px solid var(--color-btn);
-    background-color: var(--color-btn);
+    border: 1.8px solid var(--color-btn);
+    background: var(--color-btn);
     padding: 1.2em 2.5em;
     margin: 2em auto;
     transition: .5s;
     border-radius: 2em;
     font-weight: 600;
+    color: var(--color-tertiary);
 }
 
 .btnDefault:hover {
-    border: 2.2px solid var(--color-primary);
+    border: 1.8px solid var(--color-detail);
     background-color: var(--color-btn-hover);
+    color: var(--color-secondary);
 }
 
 /* #endregion */
+
 /* #region emphasis */
 .imgFit {
     width: 100vw;
@@ -277,6 +282,90 @@ video {
 
 /* #endregion */
 
+/* #region products */
+#products{
+    text-align: center;
+    padding: 5em 0;
+}
+
+.productsContainer{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 4em 0;
+}
+
+.cardProd{
+    width: 20%;
+}
+
+.cardProd li{
+    height: 5em;
+    line-height: 5em;
+    background-color: var(--color-secondary);
+    color: var(--color-bg-footer);
+    border-radius: 3;
+}
+
+.cardProd .price{
+    width: 6em;
+    height: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: -3em;
+    font-size: var(--paragraph-default);
+    background-color: var(--color-btn);
+    position: relative;
+    color: var(--color-tertiary);
+}
+
+.cardProd li.title{
+    background-color: var(--color-detail);
+    height: 8em;
+    line-height: 8em;
+    padding-top: 1.2em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    font-weight: 800;
+    font-size: var(--paragraph-default);
+    border-radius: .8em .8em 0 0;
+}
+
+.cardProd li:last-child{
+    height: 6em;
+    line-height: 6em;
+    border-radius: 0 0 .8em .8em;
+    background-color: var(--color-detail);
+}
+
+.recommended li{
+    background-color: var(--color-detail);
+    color: var(--color-tertiary);
+}
+
+.recommended li:not(:first-child){
+    background-color: var(--color-detail);
+}
+
+.recommended li.price{
+    background-color: var(--color-detail);
+    border: 5px solid white;
+}
+
+.cardProd li h5{
+    color: var(--color-tertiary);
+    padding: 2em 0;
+    font-weight: 900;
+}
+
+.cardProd .btnDefault:hover{
+    border: 2px solid var(--color-secondary);
+}
+
+/* #endregion */
 /* #region services */
 #services {
     text-align: center;
@@ -308,7 +397,7 @@ video {
 .servicesInner table th {
     font-size: var(--table-title);
     padding: .8em 0;
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
 }
 
 .servicesInner table td {
@@ -370,8 +459,163 @@ iframe {
     filter: invert(100%);
 }
 
-.contactInner input{
+.contactInner input {
     color: var(--color-secondary);
+}
+
+/* #endregion */
+
+/* #region contact */
+#contact {
+    text-align: center;
+    padding: 8em 0;
+}
+
+#contact h2{
+    margin-bottom: 1em;
+}
+
+.contactContainer {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.contactInner li {
+    padding: .8em 0;
+}
+
+.contactInner input[type=email]{
+    color: black;
+}
+
+.contactInner input[type=text],
+[type=email],
+.contactInner textarea {
+    background-color: var(--color-text-box);
+    width: 60%;
+    padding: .8em;
+    border: none;
+    color: var(--color-tertiary);
+    border-radius: 1em;
+    transition: .5s;
+}
+
+.contactInner input[type=text]:focus,
+[type=email]:focus,
+.contactInner textarea:focus {
+    background-color: var(--color-text-box-focus);
+    transition: .5s;
+}
+
+.formBtn input{
+   margin: 0 2em;
+   color: var(--color-bg-footer);
+   font-weight: 800;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    background-color: var(--color-bg-footer);
+    padding: 3.5em;
+    font-size: .8em;
+    bottom: 0;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footerContainer a, h5 {
+    opacity: .5;
+    transition: .5s;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+}
+
+.footerContainer a:hover {
+    opacity: 1;
+    transition: .5s;
+}
+
+/* #endregion */
+
+/* #region login */
+#login {
+    text-align: center;
+    padding: 8em 0;
+    width: 100%;
+    height: 77vh;
+}
+
+#login h2{
+    margin-bottom: 1em;
+}
+
+.loginContainer {
+    width: 40%;
+    margin: 0 auto;
+    border: 2.2px solid var(--color-base);
+    background-color: var(--color-card);
+    padding: 1.2em 2.5em;
+    margin: 2em auto;
+    transition: .5s;
+    border-radius: 2em;
+    font-weight: 600;
+}
+
+.loginInner li {
+    padding: .8em 0;
+}
+
+.loginInner input[type=email]{
+    color: black;
+}
+
+.loginInner input[type=email],
+[type=password] {
+    background-color: var(--color-text-box);
+    width: 60%;
+    padding: .8em;
+    border: none;
+    color: var(--color-tertiary);
+    border-radius: 1em;
+    transition: .5s;
+}
+
+.loginInner input[type=email]:focus,
+[type=password]:focus{
+    background-color: var(--color-text-box-focus);
+    transition: .5s;
+}
+
+.checkboxContainer {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between; /* Adicionado para separar os itens */
+    margin-bottom: 1em;
+}
+
+.checkboxContainer div {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxContainer div input[type="checkbox"] {
+    margin-right: 10px; /* Adiciona um espaço entre a caixa de seleção e o texto */
+}
+
+.checkboxContainer a{
+    font-size: 1em;
+}
+
+.loginInner .formBtn{
+    margin-bottom: 1em;
 }
 
 /* #endregion */
